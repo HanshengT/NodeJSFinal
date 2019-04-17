@@ -24,7 +24,7 @@ hbs.registerHelper('message', (text) => {
 	return text.toUpperCase();
 });
 
-app.use('/currency', (request, response, next) => {
+app.use('/', (request, response, next) => {
 	currency.getInfo(20, 'USD', 'PLN', 'CAD').then((status) =>{
 		text = status;
 	}).catch((error) => {
