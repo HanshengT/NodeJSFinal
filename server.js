@@ -1,5 +1,7 @@
 const express = require('express')
-const currency = require('./func')
+const currency = require('./function')
+const port = process.env.PORT || 8080;
+
 
 const hbs = require('hbs')
 
@@ -74,8 +76,7 @@ app.get('/404', (request, response) => {
 		error:'Page not found'
 	})
 })
-app.listen(8080, () => {
-	console.log('Server is up on the port 8080');
-	
-})
+app.listen(port, () => {
+    console.log(`Server is up on port ${port}`);
+});
 
